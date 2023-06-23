@@ -1,0 +1,39 @@
+
+.activeBackground{
+    background-image: linear-gradient(90deg, #F1F5D3, #E5EDE1 20%, #DDDCE1 45%, #F4DDD4 80%, #FEE0B1);
+}
+
+.activeButton{
+    border-radius: 0.375rem;
+    padding: 0.5rem;
+    background-color: rgb(15 23 42);
+    color: rgb(255 255 255);
+    margin-left: 2rem; /* 32px */
+    margin-right: 2rem; /* 32px */
+    border: 1px solid rgb(100 116 139)
+}
+
+.deactiveButton{
+    padding: 0.5rem;
+    color: rgb(0, 0, 0);
+    margin: 0 2rem 0 2rem;
+}
+
+.deactiveButton:hover{
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+}
+
+.inputBtn{
+    display: flex;
+    background-color: rgb(99 102 241);
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    align-items: center;
+    width: 17%;
+    margin-left: auto;
+}

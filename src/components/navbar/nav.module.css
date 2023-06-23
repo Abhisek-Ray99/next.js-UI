@@ -1,0 +1,21 @@
+.navContainer{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    /* grid-gap: 2rem; */
+    margin: 12px;
+    height: 30%;
+    align-items: flex-start;
+    cursor: default;
+}
+
+.line{
+    border-left: 1px solid rgb(177, 175, 175);
+    height: 40px;
+    position:absolute;
+    left: 50%;
+}
+
+.activeNav{
+    color: rgb(99 102 241);
+    background-color: rgb(219 234 254);
+}
