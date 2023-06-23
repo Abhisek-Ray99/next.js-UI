@@ -72,9 +72,12 @@ function Table() {
       groupName: "",
       destinationTable: "",
     };
-    localStorage.setItem("table_items",JSON.stringify([...rows,data]))
-    const newData = JSON.parse(localStorage.getItem('table_items'))
-    setRows([...newData]);
+    useEffect(() => {
+      // Perform localStorage action
+      localStorage.setItem("table_items",JSON.stringify([...rows,data]))
+      const newData = JSON.parse(localStorage.getItem('table_items'))
+      setRows([...newData]);
+    }, [])
   };
   const tableRowRemove = (index) => {
     let dataRow = [...rows]
@@ -90,9 +93,11 @@ function Table() {
     const { name, value } = event.target
     let data = [...rows]
     data[i][name] = value
-    localStorage.setItem("table_items",JSON.stringify(data))
-    const newData = JSON.parse(localStorage.getItem('table_items'))
-    setRows(newData)
+    useEffect(() => {
+      localStorage.setItem("table_items",JSON.stringify(data))
+      const newData = JSON.parse(localStorage.getItem('table_items'))
+      setRows(newData)
+    }, [])
   };
 
   const saveToLocalStorage = () => {

@@ -10,7 +10,7 @@ import { DropDownMenus , Conditions} from "./homestyle";
 
 import styles from './home.module.css'
 
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import DropDownBrowse from "../DropDownBrowse";
 import CheckBox from "../CheckBox";
 
@@ -32,15 +32,19 @@ export default function HomePage() {
   const [fileData, setFileData] = useState([])
 
   const [filelist, setFilelist] = useState(() => {
-    const savedItems = localStorage.getItem("data_files")
-    const parsedItem = JSON.parse(savedItems)
-    return parsedItem || []
+    useEffect(() => {
+      const savedItems = localStorage.getItem("data_files")
+      const parsedItem = JSON.parse(savedItems)
+      return parsedItem || []
+    },[])
   });
 
   const [rows, setRows] = useState(() => {
-    const savedItems = localStorage.getItem("table_items")
-    const parsedItem = JSON.parse(savedItems)
-    return parsedItem || []
+    useEffect(() => {
+      const savedItems = localStorage.getItem("table_items")
+      const parsedItem = JSON.parse(savedItems)
+      return parsedItem || []
+    },)
   });
 
   
