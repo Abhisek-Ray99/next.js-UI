@@ -21,20 +21,20 @@ const DragandDrop = () => {
         id: nanoid(),
         file: file.name
       }));
-      useEffect(() => {
+      if (typeof window !== 'undefined') {
         localStorage.setItem("data_files",JSON.stringify(filesArray))
         let arr = JSON.parse(localStorage.getItem('data_files'))
         setFilelist(arr);
-      },[])
+      }
   }
 
   const handleClearFile = useCallback((id) => {
     let files = filelist.filter((file) => file.id !== id);
-    useEffect(() => {
+    if (typeof window !== 'undefined') {
       localStorage.setItem("data_files",JSON.stringify(files))
       let arr = JSON.parse(localStorage.getItem('data_files'))
       setFilelist(arr);
-    })
+    }
   }, [filelist]);
 
   return (

@@ -32,19 +32,22 @@ export default function HomePage() {
   const [fileData, setFileData] = useState([])
 
   const [filelist, setFilelist] = useState(() => {
-    useEffect(() => {
+    if (typeof window !== 'undefined') {
       const savedItems = localStorage.getItem("data_files")
       const parsedItem = JSON.parse(savedItems)
       return parsedItem || []
-    },[])
+    }else{
+      return []
+    }
   });
 
   const [rows, setRows] = useState(() => {
-    useEffect(() => {
+    if (typeof window !== 'undefined') {
       const savedItems = localStorage.getItem("table_items")
       const parsedItem = JSON.parse(savedItems)
       return parsedItem || []
-    },)
+    }
+      return []
   });
 
   
